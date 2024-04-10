@@ -1,0 +1,13 @@
+<div #map style="height: 600px; width: 800px;"></div>
+<button *ngIf="!markers.length" (click)="addMarkerOnClick()">Add Marker</button>
+<button (click)="removeMarkers()">Remove Markers</button>
+<button *ngIf="markers.length" (click)=" save()">Save Marker Details</button>
+
+<div *ngIf="savedCoordinates.length > 0">
+    <h3>Saved Coordinates:</h3>
+    <ul>
+        <li *ngFor="let coordinate of savedCoordinates">
+            Latitude: {{ coordinate.lat }}, Longitude: {{ coordinate.lng }}
+        </li>
+    </ul>
+</div>

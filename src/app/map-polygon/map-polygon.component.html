@@ -1,0 +1,14 @@
+<div #map style="height: 600px; width: 800px;"></div>
+
+<div>
+  <button (click)="startTracing()">Start Tracing</button>
+  <button (click)="removeTracedLocation()">Remove Traced Location</button>
+  <button (click)="saveLocation()">Save Location</button>
+</div>
+
+<div *ngIf="coordinates.length > 0">
+  <h3>Coordinate Details</h3>
+  <div *ngFor="let coordinate of coordinates">
+    <p>{{ coordinate.lat }}, {{ coordinate.lng }}</p>
+  </div>
+</div>

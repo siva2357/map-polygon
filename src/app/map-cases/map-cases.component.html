@@ -1,0 +1,38 @@
+<div>
+    <button (click)="startMapPickerMode()">Map Picker Mode</button>
+    <button (click)="startTracing()">Trace Location Mode</button>
+  </div>
+  
+  <div #map style="height: 600px; width: 800px;" ></div>
+  
+  <div *ngIf="mapPickerModeActive">
+    <!-- Display buttons only when in map picker mode -->
+    <button (click)="addMarkerOnClick()">Add Marker</button>
+    <button (click)="removeMarkers()">Remove Markers</button>
+    <button *ngIf="markers.length > 0" (click)="save()">Save Marker Details</button>
+  </div>
+
+  <!-- <div *ngIf="savedCoordinates.length > 0">
+    <h3>Saved Coordinates:</h3>
+    <ul>
+        <li *ngFor="let coordinate of savedCoordinates">
+            Latitude: {{ coordinate.lat }}, Longitude: {{ coordinate.lng }}
+        </li>
+    </ul>
+</div> -->
+  
+  <div *ngIf="traceLocationModeActive">
+    <!-- Display buttons only when in trace location mode -->
+    <button (click)="startTracing()">Start Tracing</button>
+    <button (click)="removeTracedLocation()">Remove Traced Location</button>
+    <button *ngIf="coordinates.length > 0" (click)="saveLocation()">Save Traced Location</button>
+  </div>
+  <!-- <div *ngIf="coordinates.length > 0">
+    <h3>Coordinate Details</h3>
+    <ul>
+        <li *ngFor="let coordinate of coordinates">
+            Latitude: {{ coordinate.lat }}, Longitude: {{ coordinate.lng }}
+        </li>
+    </ul>
+  </div> -->
+  
